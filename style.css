@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:700');
+
+* {
+ box-sizing: border-box;
+}
+
+/* override simple semantics for design purposes */
+em {
+ font-weight: bold;
+ font-style: normal;
+}
+a {
+ text-decoration: none;
+ color: black;
+ cursor: pointer;
+}
+.button {
+ width: 100%;
+ text-align: center;
+ background: linear-gradient(white, silver);
+ padding: 10px;
+ border: 1px solid black;
+ border-radius: 10px;
+}
+h1 {
+ font-family: 'Cinzel Decorative';
+ font-weight: 700;
+}
+
+/* flex is a good way to format the headings */
+h3 {
+ display: flex;
+ justify-content: space-between;
+}
+h3 strong {
+ margin-left: auto;
+ margin-right: 20px;
+}
+
+body {
+ padding: 5%;
+}
+/* grid makes layout easy */
+body {
+ display: grid;
+ grid-template-columns: 1fr 2fr 2fr;
+ grid-gap: 20px;
+ grid-template-areas: "name exp exp" "name edu skl";
+}
+
+header {
+ grid-area: name;
+}
+.experience {
+ grid-area: exp;
+}
+
+/* additional decoration on the grid parent containers adds style and structure */
+
+header {
+ text-align: center;
+ border-right: 1px dotted gray;
+ padding-right: 10px;
+ font-size: 1.5vw;
+}
+
+.education ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+}
+.education li {
+ display: flex;
+ justify-content: space-between;
+}
+.education li strong {
+ margin-left: auto;
+ padding-right: 5px;
+}
+
+.education li strong, .education li em {
+ font-weight: normal;
+ font-style: italic;
+}
+
+/* hack a list into one text block with commas*/
+.skills ul {
+ margin: 0;
+ padding: 0;
+}
+.skills li {: inline;
+}
+.skills li:after {
+ content: ",";
+}
+/* remove extra comma from last entry */
+.skills li:last-child:after {
+ content: "";
+}
+
+/* MOBILE LOSE-GRID WITH MEDIAQUERY */
+
+@media screen and (max-width: 600px) {
+ header {
+  text-align: center;
+  border-right: none;
+  padding-right: 10px;
+  font-size: 5vw;
+ }
+ body {
+  padding: 2vw;
+  display: block;
+ }
+ h3 {
+  flex-wrap: wrap;
+  justify-content: center;
+ }
+ h3 strong, h3 em {
+  font-size: 80%;
+  color: gray;
+  font-weight: normal;
+  line-height: 3;
+ }
+ h3 strong {
+  width: 80%;
+  margin: 0;
+  font-style: italic;
+ }
+
+ ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+ }
+ li {
+  margin-bottom: 0.5em;
+ }
+ h2 {
+  text-align: center;
+  margin-top: 3em;
+  border-bottom: 2px solid gray;
+ }
+ .phone {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(white, silver);
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+ }
+
+ .education li {
+  display: block;
+  text-align: center;
+ }
+
+ .education li strong {
+  padding: 0;
+  display: block;
+ }
+ 
+}
+ display
+}
